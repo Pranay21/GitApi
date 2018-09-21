@@ -10,7 +10,7 @@ module.exports = {
   devServer: {
     contentBase: "./dist"
   },
-
+  externals: ["axios"],
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html"

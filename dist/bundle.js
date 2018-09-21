@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("const contain = document.querySelector(\"#git-form\");\r\nconst user = contain.querySelector(\"#git-search-input\");\r\n\r\nconst API_KEY = \"03e107284b46e360508cfb17b35aaceb62f81cd1\";\r\n\r\nconst fetchGifs = url => {\r\n  return fetch(url).then(res => res.json());\r\n};\r\n\r\nconst gitCollection = () => {\r\n  contain.addEventListener(\"submit\", e => {\r\n    e.preventDefault();\r\n    const username = user.value;\r\n    fetchGifs(\r\n      `https://api.github.com/users/${username}/repos?access_token=${API_KEY}`\r\n    ).then(data => {\r\n      console.log(data);\r\n    });\r\n  });\r\n};\r\n\r\ngitCollection();\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const contain = document.querySelector(\"#git-form\");\r\nconst user = contain.querySelector(\"#git-search-input\");\r\n\r\nconst API_KEY = \"03e107284b46e360508cfb17b35aaceb62f81cd1\";\r\n\r\nconst fetchGifs = url => {\r\n  return fetch(url).then(res => res.json());\r\n};\r\n\r\nconst gitCollection = () => {\r\n  contain.addEventListener(\"submit\", e => {\r\n    e.preventDefault();\r\n    const username = user.value;\r\n    fetchGifs(\r\n      `https://api.github.com/users/${username}/repos?access_token=${API_KEY}`\r\n    ).then(data => {\r\n      //console.log(data);\r\n      data.map(data => {\r\n        const temp = document.querySelector(\"#container2\");\r\n        var h4 = document.createElement(\"h4\");\r\n        h4.innerText = data.name;\r\n        temp.appendChild(h4);\r\n      });\r\n    });\r\n  });\r\n};\r\n\r\ngitCollection();\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

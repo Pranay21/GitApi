@@ -1,10 +1,14 @@
 import css from "./style.css";
 //import styles from "./style.css";
 
-const contain = document.querySelector("#git-form");
-const user = contain.querySelector("#git-search-input");
+import { githeader } from "./header";
 
-const API_KEY = "72d2d6f54dfbd95ab937b61627e77a2fe05485a9";
+const contain = document.querySelector("#git-form");
+const contain2 = document.querySelector("#container2");
+const user = contain.querySelector("#git-search-input");
+const header = contain2.querySelector("#h3-id");
+
+const API_KEY = "48dba4b4f226804a76e7939d80f1918dc4ccdad2";
 
 const fetchGifs = url => {
   return fetch(url).then(res => res.json());
@@ -28,4 +32,5 @@ const gitCollection = () => {
   });
 };
 
+header.innerText = githeader();
 gitCollection();

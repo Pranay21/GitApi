@@ -130,6 +130,18 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 
 /***/ }),
 
+/***/ "./src/header.js":
+/*!***********************!*\
+  !*** ./src/header.js ***!
+  \***********************/
+/*! exports provided: githeader */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"githeader\", function() { return githeader; });\nconst githeader = () => {\r\n  const str = \"The list is as follows:\";\r\n  return str;\r\n};\r\n\n\n//# sourceURL=webpack:///./src/header.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -138,7 +150,19 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_0__);\n\r\n//import styles from \"./style.css\";\r\n\r\nconst contain = document.querySelector(\"#git-form\");\r\nconst user = contain.querySelector(\"#git-search-input\");\r\n\r\nconst API_KEY = \"72d2d6f54dfbd95ab937b61627e77a2fe05485a9\";\r\n\r\nconst fetchGifs = url => {\r\n  return fetch(url).then(res => res.json());\r\n};\r\n\r\nconst gitCollection = () => {\r\n  contain.addEventListener(\"submit\", e => {\r\n    e.preventDefault();\r\n    const username = user.value;\r\n    fetchGifs(\r\n      `https://api.github.com/users/${username}/repos?access_token=${API_KEY}`\r\n    ).then(data => {\r\n      console.log(data.name);\r\n      data.map(data2 => {\r\n        var para = document.createElement(\"p\");\r\n        const temp = document.querySelector(\"#container2\");\r\n        para.innerText = data2.name;\r\n        temp.appendChild(para);\r\n      });\r\n    });\r\n  });\r\n};\r\n\r\ngitCollection();\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ \"./src/header.js\");\n/* harmony import */ var _list__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./list */ \"./src/list.js\");\n\r\n//import styles from \"./style.css\";\r\n\r\n\r\n\r\n\r\nconst contain = document.querySelector(\"#git-form\");\r\nconst contain2 = document.querySelector(\"#container2\");\r\nconst user = contain.querySelector(\"#git-search-input\");\r\nconst header = contain2.querySelector(\"#h3-id\");\r\n\r\n// const API_KEY = \"48dba4b4f226804a76e7939d80f1918dc4ccdad2\";\r\n\r\n// const fetchGifs = url => {\r\n//   return fetch(url).then(res => res.json());\r\n// };\r\n\r\n// const gitCollection = () => {\r\n//   contain.addEventListener(\"submit\", e => {\r\n//     e.preventDefault();\r\n//     const username = user.value;\r\n//     fetchGifs(\r\n//       `https://api.github.com/users/${username}/repos?access_token=${API_KEY}`\r\n//     ).then(data => {\r\n//       data.map(data2 => {\r\n//         var para = document.createElement(\"p\");\r\n//         const temp = document.querySelector(\"#container2\");\r\n//         para.innerText = data2.name;\r\n//         temp.appendChild(para);\r\n//       });\r\n//     });\r\n//   });\r\n// };\r\n\r\nheader.innerText = Object(_header__WEBPACK_IMPORTED_MODULE_1__[\"githeader\"])();\r\nObject(_list__WEBPACK_IMPORTED_MODULE_2__[\"gitCollection\"])();\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/list.js":
+/*!*********************!*\
+  !*** ./src/list.js ***!
+  \*********************/
+/*! exports provided: gitCollection */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"gitCollection\", function() { return gitCollection; });\nconst API_KEY = \"4662e69b51dd1bdd42e7afa8bf65a6088ee26545\";\r\n\r\nconst contain = document.querySelector(\"#git-form\");\r\nconst contain2 = document.querySelector(\"#container2\");\r\nconst user = contain.querySelector(\"#git-search-input\");\r\n\r\nconst fetchGifs = url => {\r\n  return fetch(url).then(res => res.json());\r\n};\r\n\r\nconst gitCollection = () => {\r\n  contain.addEventListener(\"submit\", e => {\r\n    e.preventDefault();\r\n    const username = user.value;\r\n    fetchGifs(\r\n      `https://api.github.com/users/${username}/repos?access_token=${API_KEY}`\r\n    ).then(data => {\r\n      data.map(data2 => {\r\n        var para = document.createElement(\"p\");\r\n        const temp = document.querySelector(\"#container2\");\r\n        para.innerText = data2.name;\r\n        temp.appendChild(para);\r\n      });\r\n    });\r\n    const temp = gitCollection();\r\n    return temp;\r\n  });\r\n};\r\n\n\n//# sourceURL=webpack:///./src/list.js?");
 
 /***/ }),
 

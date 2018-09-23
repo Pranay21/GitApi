@@ -1,9 +1,30 @@
 h3 {
-  color: "red";
-  font-size: 25pt;
+  color: rgb(0, 204, 255);
+  font-size: 20pt;
+  font-family: verdana;
 }
 
 p {
-  color: "black";
+  color: white;
   font-size: 15pt;
+  font-family: verdana;
+}
+
+body {
+  text-align: center;
+  font-family: verdana;
+  background-color: Black;
+}
+input[type="text"] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+button[type="search"] {
+  width: 10%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
